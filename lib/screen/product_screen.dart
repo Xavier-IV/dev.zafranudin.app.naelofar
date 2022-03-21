@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fwt_naelofar_app/data/product.dart';
+import 'package:fwt_naelofar_app/data/product_generator.dart';
+import 'package:fwt_naelofar_app/model/product.dart';
 import 'package:fwt_naelofar_app/widget/product_card.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+  ProductScreen({Key? key}) : super(key: key);
+
+  final List<Product> _products = ProductGenerator.generate();
 
   @override
   Widget build(BuildContext context) {
@@ -24,27 +27,13 @@ class ProductScreen extends StatelessWidget {
         ),
         Flexible(
           flex: 8,
-          child: ListView(
-            children: [
-              ProductCard(
-                product: Product(
-                  title: 'PIYA PLEATED SHAWL - LIGHT BROWN',
-                  price: 79.0,
-                  images: [
-                    'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_light_brown_1.jpg'
-                  ],
-                ),
-              ),
-              ProductCard(
-                product: Product(
-                  title: 'PIYA PLEATED SHAWL - PURPLE MAUVE',
-                  price: 79.0,
-                  images: [
-                    'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_purple_mauve_1.jpg'
-                  ],
-                ),
-              ),
-            ],
+          child: ListView.builder(
+            itemCount: _products.length,
+            itemBuilder: (context, index) {
+              return ProductCard(
+                product: _products[index],
+              );
+            },
           ),
         ),
       ],
