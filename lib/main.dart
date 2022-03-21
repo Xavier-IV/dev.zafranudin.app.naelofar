@@ -53,8 +53,22 @@ class _MyHomePageState extends State<MyHomePage> {
               flex: 8,
               child: ListView(
                 children: const [
-                  Text('Product 1 goes here'),
-                  Text('Product 2 goes here'),
+                  SizedBox(
+                    height: 120.0,
+                    child: Card(
+                      child: Text(
+                        'Product 1 goes here',
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 120.0,
+                    child: Card(
+                      child: Text(
+                        'Product 2 goes here',
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
