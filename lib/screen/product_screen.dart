@@ -27,10 +27,22 @@ class ProductScreen extends StatelessWidget {
           child: ListView(
             children: [
               ProductCard(
-                product: Product(title: 'Product 1 Name (Brown)', price: 15.00),
+                product: Product(
+                  title: 'PIYA PLEATED SHAWL - LIGHT BROWN',
+                  price: 79.0,
+                  images: [
+                    'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_light_brown_1.jpg'
+                  ],
+                ),
               ),
               ProductCard(
-                product: Product(title: 'Product 2 Name (Black)', price: 9.00),
+                product: Product(
+                  title: 'PIYA PLEATED SHAWL - PURPLE MAUVE',
+                  price: 79.0,
+                  images: [
+                    'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_purple_mauve_1.jpg'
+                  ],
+                ),
               ),
             ],
           ),

@@ -13,12 +13,12 @@ class ProductCard extends StatelessWidget {
       child: Card(
         child: Row(
           children: [
-            const Flexible(
-              flex: 2,
-              child: Text(
-                'Image here',
-                textAlign: TextAlign.center,
-              ),
+            Flexible(
+              flex: 3,
+              child: SizedBox(
+                  width: 90.0,
+                  height: 150.0,
+                  child: Image.network(product.images[0])),
             ),
             Flexible(
               flex: 8,
