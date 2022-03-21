@@ -52,20 +52,74 @@ class _MyHomePageState extends State<MyHomePage> {
             Flexible(
               flex: 8,
               child: ListView(
-                children: const [
+                children: [
                   SizedBox(
                     height: 120.0,
                     child: Card(
-                      child: Text(
-                        'Product 1 goes here',
+                      child: Row(
+                        children: [
+                          const Flexible(
+                            flex: 2,
+                            child: Text(
+                              'Image here',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 8,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    'Product 1 goes here',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text('RM 10.00')
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                   SizedBox(
                     height: 120.0,
                     child: Card(
-                      child: Text(
-                        'Product 2 goes here',
+                      child: Row(
+                        children: [
+                          const Flexible(
+                            flex: 2,
+                            child: Text(
+                              'Image here',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          Flexible(
+                            flex: 8,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  Text(
+                                    'Product 2 goes here',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text('RM 13.00')
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
