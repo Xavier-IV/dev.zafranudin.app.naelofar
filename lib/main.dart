@@ -37,10 +37,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[
-            Center(
-              child: Padding(
-                padding: EdgeInsets.all(15.0),
+          children: <Widget>[
+            const Flexible(
+              flex: 1,
+              child: Center(
                 child: Text(
                   'Naelofar',
                   style: TextStyle(
@@ -49,8 +49,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Text('Product 1 goes here'),
-            Text('Product 2 goes here'),
+            Flexible(
+              flex: 8,
+              child: ListView(
+                children: const [
+                  Text('Product 1 goes here'),
+                  Text('Product 2 goes here'),
+                ],
+              ),
+            ),
           ],
         ),
       ),
