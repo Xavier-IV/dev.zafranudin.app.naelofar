@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Naelofar',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const MyHomePage(title: 'Naelofar'),
     );
@@ -33,10 +33,15 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Naelofar Title'),
+            Text('Product 1 goes here'),
+            Text('Product 2 goes here'),
+          ],
         ),
       ),
     );
