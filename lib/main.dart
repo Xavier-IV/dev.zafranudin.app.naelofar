@@ -37,8 +37,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text('Naelofar Title'),
+          children: const <Widget>[
+            Center(
+              child: Padding(
+                padding: EdgeInsets.all(15.0),
+                child: Text(
+                  'Naelofar',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
             Text('Product 1 goes here'),
             Text('Product 2 goes here'),
           ],
