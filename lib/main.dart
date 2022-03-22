@@ -34,6 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0x44000000),
+        elevation: 0,
+        title: Text("Naelofar"),
+      ),
       body: SafeArea(
         child: ProductScreen(),
       ),
