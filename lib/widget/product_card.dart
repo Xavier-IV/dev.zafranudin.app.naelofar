@@ -12,7 +12,6 @@ class ProductCard extends StatelessWidget {
       height: 120.0,
       child: Card(
         child: InkWell(
-          onTap: () {},
           child: Row(
             children: [
               Flexible(

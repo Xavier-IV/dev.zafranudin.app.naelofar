@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fwt_naelofar_app/data/product_generator.dart';
 import 'package:fwt_naelofar_app/model/product.dart';
+import 'package:fwt_naelofar_app/screen/product_view.dart';
 import 'package:fwt_naelofar_app/widget/product_card.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -10,33 +11,37 @@ class ProductScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        const Flexible(
-          flex: 1,
-          child: Center(
-            child: Text(
-              'Naelofar',
-              style: TextStyle(
-                fontSize: 20.0,
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Flexible(
+            flex: 8,
+            child: ListView.builder(
+              itemCount: _products.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    print('Navigating');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductView(product: _products[index]),
+                      ),
+                    );
+                  },
+                  child: ProductCard(
+                    product: _products[index],
+                  ),
+                );
+              },
             ),
           ),
-        ),
-        Flexible(
-          flex: 8,
-          child: ListView.builder(
-            itemCount: _products.length,
-            itemBuilder: (context, index) {
-              return ProductCard(
-                product: _products[index],
-              );
-            },
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
