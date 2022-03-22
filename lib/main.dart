@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fwt_naelofar_app/screen/product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Naelofar',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const MyHomePage(title: 'Naelofar'),
     );
@@ -33,11 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
+      body: SafeArea(
+        child: ProductScreen(),
       ),
     );
   }
