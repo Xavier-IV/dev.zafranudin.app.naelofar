@@ -10,9 +10,12 @@ class ProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Product Details'),
+      ),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 300,
@@ -86,17 +89,38 @@ class ProductView extends StatelessWidget {
                 ],
               ),
             ),
-            Flexible(
-              child: ListView(
-                children: <Widget>[
-                  Text(product.title),
-                  Text(product.description ?? ''),
-                  const Text('Fabric guide'),
-                  Text('Opacity: ${product.fabricGuide?.opacity?.name}'),
-                  Text('Texture: ${product.fabricGuide?.texture?.name}'),
-                  Text('Thickness: ${product.fabricGuide?.thickness?.name}'),
-                  const Text('Material Care'),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.title,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'RM ${product.price.toStringAsFixed(2)}',
+                    style: TextStyle(fontSize: 14.0),
+                  ),
                 ],
+              ),
+            ),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: ListView(
+                  children: <Widget>[
+                    Text(product.description ?? ''),
+                    const Text('Fabric guide'),
+                    Text('Opacity: ${product.fabricGuide?.opacity?.name}'),
+                    Text('Texture: ${product.fabricGuide?.texture?.name}'),
+                    Text('Thickness: ${product.fabricGuide?.thickness?.name}'),
+                    const Text('Material Care'),
+                  ],
+                ),
               ),
             ),
           ],
