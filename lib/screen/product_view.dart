@@ -109,12 +109,15 @@ class ProductView extends StatelessWidget {
                     product.title,
                     style: const TextStyle(
                       fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
                   Text(
                     'RM ${product.price.toStringAsFixed(2)}',
-                    style: TextStyle(fontSize: 14.0),
+                    style: const TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w200,
+                    ),
                   ),
                 ],
               ),
