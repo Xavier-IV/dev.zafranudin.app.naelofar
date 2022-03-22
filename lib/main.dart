@@ -36,8 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0x44000000),
-        elevation: 0,
-        title: Text("Naelofar"),
+        elevation: 1,
+        title: Text(
+          "Naelofar",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: SafeArea(
         child: ProductScreen(),

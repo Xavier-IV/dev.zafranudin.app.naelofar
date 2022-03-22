@@ -11,14 +11,21 @@ class ProductView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
-            const Text('Promo image'),
-            Text('${product.title}'),
-            const Text('Description'),
+            SizedBox(
+              width: 150,
+              height: 300,
+              child: Image.network(
+                product.images[0],
+              ),
+            ),
+            Text(product.title),
+            Text(product.description ?? ''),
             const Text('Fabric guide'),
+            Text('Opacity: ${product.fabricGuide?.opacity?.name}'),
+            Text('Texture: ${product.fabricGuide?.texture?.name}'),
+            Text('Thickness: ${product.fabricGuide?.thickness?.name}'),
             const Text('Material Care'),
           ],
         ),
