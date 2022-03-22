@@ -44,8 +44,8 @@ class ProductGenerator {
         ),
         images: [
           'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_brown_mauve_1.jpg',
-          'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_brown_mauve_2.jpg'
-              'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_brown_mauve_3.jpg'
+          'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_brown_mauve_2.jpg',
+          'https://my.naelofar.com/pub/media/catalog/product/cache/930d50ba24eabca612cdb8388f50b2e4/p/i/piya_pleated_shawl_-_brown_mauve_3.jpg',
         ],
         description: 'Description of product',
       ),
