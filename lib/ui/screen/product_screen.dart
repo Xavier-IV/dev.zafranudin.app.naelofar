@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fwt_naelofar_app/data/product_generator.dart';
-import 'package:fwt_naelofar_app/model/product.dart';
-import 'package:fwt_naelofar_app/screen/product_view.dart';
-import 'package:fwt_naelofar_app/widget/product_card.dart';
+import 'package:fwt_naelofar_app/core/data/product_generator.dart';
+import 'package:fwt_naelofar_app/core/model/product.dart';
+import 'package:fwt_naelofar_app/ui/screen/product_view.dart';
+import 'package:fwt_naelofar_app/ui/widget/product_card.dart';
 
 class ProductScreen extends StatelessWidget {
   ProductScreen({Key? key}) : super(key: key);

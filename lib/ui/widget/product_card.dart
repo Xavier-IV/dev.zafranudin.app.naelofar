@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fwt_naelofar_app/model/product.dart';
+import 'package:fwt_naelofar_app/core/model/product.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({Key? key, required this.product}) : super(key: key);

@@ -1,5 +1,5 @@
-import 'package:fwt_naelofar_app/model/fabric_guide.dart';
-import 'package:fwt_naelofar_app/model/product.dart';
+import 'package:fwt_naelofar_app/core/model/fabric_guide.dart';
+import 'package:fwt_naelofar_app/core/model/product.dart';
 
 class ProductGenerator {
   static List<Product> generate() {

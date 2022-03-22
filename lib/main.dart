@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fwt_naelofar_app/screen/product_screen.dart';
+import 'package:fwt_naelofar_app/ui/screen/product_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:fwt_naelofar_app/model/product.dart';
-import 'package:fwt_naelofar_app/widget/product_gallery.dart';
+import 'package:fwt_naelofar_app/core/model/product.dart';
+import 'package:fwt_naelofar_app/ui/widget/product_gallery.dart';
 
 class ProductView extends StatefulWidget {
   const ProductView({Key? key, required this.product}) : super(key: key);
