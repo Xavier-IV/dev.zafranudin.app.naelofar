@@ -11,35 +11,38 @@ class ProductCard extends StatelessWidget {
     return SizedBox(
       height: 120.0,
       child: Card(
-        child: Row(
-          children: [
-            Flexible(
-              flex: 3,
-              child: SizedBox(
-                  width: 90.0,
-                  height: 150.0,
-                  child: Image.network(product.images[0])),
-            ),
-            Flexible(
-              flex: 8,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      product.title,
-                      style: const TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
+        child: InkWell(
+          onTap: () {},
+          child: Row(
+            children: [
+              Flexible(
+                flex: 3,
+                child: SizedBox(
+                    width: 90.0,
+                    height: 150.0,
+                    child: Image.network(product.images[0])),
+              ),
+              Flexible(
+                flex: 8,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        product.title,
+                        style: const TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    Text('RM ${product.price.toStringAsFixed(2)}')
-                  ],
+                      Text('RM ${product.price.toStringAsFixed(2)}')
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
