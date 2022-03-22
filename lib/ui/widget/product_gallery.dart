@@ -18,6 +18,24 @@ class _ProductGallery extends State<ProductGallery> {
     });
   }
 
+  showSelected(index) {
+    if (index != _imageIndex) return const SizedBox.shrink();
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        gradient: LinearGradient(
+          begin: FractionalOffset.topRight,
+          end: FractionalOffset.bottomLeft,
+          colors: [
+            Colors.grey.withOpacity(0.0),
+            Colors.grey.withOpacity(0.5),
+          ],
+          stops: const [0.0, 0.5],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -62,9 +80,15 @@ class _ProductGallery extends State<ProductGallery> {
                   child: SizedBox(
                     height: 120.0,
                     width: double.infinity,
-                    child: Image.network(
-                      widget.images[index],
-                      fit: BoxFit.cover,
+                    child: Stack(
+                      alignment: AlignmentDirectional.bottomStart,
+                      children: [
+                        Image.network(
+                          widget.images[index],
+                          fit: BoxFit.cover,
+                        ),
+                        showSelected(index),
+                      ],
                     ),
                   ),
                 );
