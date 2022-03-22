@@ -11,7 +11,18 @@ class ProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Product Details'),
+        title: const Text(
+          'Product Details',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w200,
+          ),
+        ),
+        backgroundColor: const Color(0x44000000),
+        elevation: 1,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: SafeArea(
         child: Column(
