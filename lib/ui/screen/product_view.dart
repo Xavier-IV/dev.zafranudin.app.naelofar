@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fwt_naelofar_app/core/model/product.dart';
+import 'package:fwt_naelofar_app/ui/widget/fabric_guide_range.dart';
 import 'package:fwt_naelofar_app/ui/widget/product_gallery.dart';
 
 class ProductView extends StatefulWidget {
@@ -18,6 +19,10 @@ class _ProductView extends State<ProductView> {
     setState(() {
       _imageIndex = index;
     });
+  }
+
+  setColor(from, against) {
+    return from == against ? Colors.black : Colors.grey.withOpacity(0.4);
   }
 
   @override
@@ -74,14 +79,10 @@ class _ProductView extends State<ProductView> {
                 padding: const EdgeInsets.all(15.0),
                 child: ListView(
                   children: <Widget>[
+                    FabricGuideRange(
+                      fabricGuide: widget.product.fabricGuide,
+                    ),
                     Text(widget.product.description ?? ''),
-                    const Text('Fabric guide'),
-                    Text(
-                        'Opacity: ${widget.product.fabricGuide?.opacity?.name}'),
-                    Text(
-                        'Texture: ${widget.product.fabricGuide?.texture?.name}'),
-                    Text(
-                        'Thickness: ${widget.product.fabricGuide?.thickness?.name}'),
                     const Text('Material Care'),
                   ],
                 ),

@@ -4,7 +4,7 @@ enum FabricOpacity {
   heavy,
 }
 
-enum FabricTexture { smooth, slightlyTextured, textured }
+enum FabricTexture { smooth, slight, textured }
 
 enum FabricThickness { thin, medium, thick }
 
