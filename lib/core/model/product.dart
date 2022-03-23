@@ -5,6 +5,7 @@ class Product {
   String? description;
   List<String> images;
   FabricGuide? fabricGuide = FabricGuide();
+  String? materialCare;
   double price;
 
   Product({
@@ -13,5 +14,6 @@ class Product {
     this.images = const [],
     this.description,
     this.fabricGuide,
+    this.materialCare,
   });
 }
