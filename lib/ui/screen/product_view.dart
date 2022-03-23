@@ -90,11 +90,38 @@ class _ProductView extends State<ProductView> {
                 ),
               ),
               Container(
-                child: const TabBar(
-                  tabs: [
-                    Tab(text: "Description"),
-                    Tab(text: "Material"),
-                    Tab(text: "Care"),
+                child: TabBar(
+                  onTap: (val) {
+                    print(val);
+                  },
+                  tabs: const [
+                    Tab(
+                      child: Text(
+                        "Description",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Material",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    Tab(
+                      child: Text(
+                        "Care",
+                        style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -104,14 +131,26 @@ class _ProductView extends State<ProductView> {
                   child: TabBarView(
                     children: [
                       SingleChildScrollView(
-                        child: Text(widget.product.description ?? 'N/A'),
+                        child: Text(
+                          widget.product.description ?? 'N/A',
+                          style: const TextStyle(
+                            fontSize: 14.0,
+                            fontWeight: FontWeight.w200,
+                          ),
+                        ),
                       ),
                       SingleChildScrollView(
                         child: FabricGuideRange(
                           fabricGuide: widget.product.fabricGuide,
                         ),
                       ),
-                      Text(widget.product.materialCare ?? 'N/A'),
+                      Text(
+                        widget.product.materialCare ?? 'N/A',
+                        style: const TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w200,
+                        ),
+                      ),
                     ],
                   ),
                 ),
