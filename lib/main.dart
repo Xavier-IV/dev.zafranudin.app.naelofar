@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fwt_naelofar_app/screen/product_screen.dart';
+import 'package:fwt_naelofar_app/ui/screen/product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,6 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0x44000000),
+        elevation: 1,
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
+        title: const Text(
+          "Naelofar",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w200,
+          ),
+        ),
+      ),
       body: SafeArea(
         child: ProductScreen(),
       ),
