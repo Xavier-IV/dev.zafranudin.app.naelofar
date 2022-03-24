@@ -49,6 +49,11 @@ class _MyHomePageState extends State<MyHomePage>
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: _widgets.length);
+    _tabController.animation?.addListener(() {
+      setState(() {
+        _currentIndex = _tabController.index;
+      });
+    });
   }
 
   @override
