@@ -30,10 +30,12 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
   int _currentIndex = 0;
+  late TabController _tabController;
 
-  List<Widget> widgets = [
+  final List<Widget> _widgets = [
     const Center(
       child: Text('Wishlist'),
     ),
@@ -43,9 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
     )
   ];
 
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: _widgets.length);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
+      _tabController.animateTo(index);
     });
   }
 
@@ -67,7 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: SafeArea(
-        child: widgets[_currentIndex],
+        child: TabBarView(
+          controller: _tabController,
+          children: _widgets,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
