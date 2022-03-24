@@ -33,6 +33,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
+  List<Widget> widgets = [
+    const Center(
+      child: Text('Wishlist'),
+    ),
+    ProductScreen(),
+    const Center(
+      child: Text('Account'),
+    )
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _currentIndex = index;
@@ -57,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: SafeArea(
-        child: ProductScreen(),
+        child: widgets[_currentIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: _onItemTapped,
